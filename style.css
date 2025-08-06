@@ -1,8 +1,71 @@
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
+header {
+  background-color: #2a4d69;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+form input, form textarea, form button {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+form button {
+  background-color: #2a4d69;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #1e3550;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #2a4d69;
+  color: #fff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
   nav a {
     display: block;
     margin: 10px 0;
@@ -14,7 +77,6 @@
 
   input, textarea, button {
     width: 100%;
-    max-width: 100%;
     box-sizing: border-box;
   }
 }
