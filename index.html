@@ -1,73 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>https://github.com/atyourserviceglobal/atyourserviceglobal/blob/main/logo.png.PNG?raw=true
-At Your Service Global</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>At Your Service Global</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <div class="logo">At Your Service Global</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+    <nav class="navbar">
+      <img src="https://github.com/atyourserviceglobal/atyourserviceglobal/blob/main/logo.png.PNG?raw=true" alt="AYSG Logo" class="logo" />
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section id="home">
-    <h2>Welcome</h2>
-    <p>Whether you`re a small business owner or a busy professional, At Your Service Global provides virtual administrative support and virtual office address services to help you cut costs and stay organizes - without hiring full-time staff.</p>
+  <section id="about" class="section">
+    <h1>Welcome to At Your Service Global</h1>
+    <p>We are your professional virtual assistant partner, helping you stay organized, efficient, and stress-free — wherever you are in the world.</p>
   </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Reliable, professional remote support tailored to help businesses run more smoothly anywhere, anytime!.</p>
-  </section>
-
-  <section id="services">
+  <section id="services" class="section">
     <h2>Services</h2>
-    <ul>
-      <li>Admin support</li>
-      <li>Email management</li>
-      <li>Data entry</li>
-      <li>Calendar scheduling</li>
-      <li>Task tracking & reporting</li>
-      <li>Document formatting</li>
-      <li>CRM data input</li>
-      <li>Calendar scheduking</li>
-      <li>Office address rental</li>
-      <li>Social media support</li>
-      <li>Invoicing</li>
-      <li>Light bookkeeping</li>
-      <li>Onboarding new hires</li>
+    <ul class="services-list">
+      <li>Email & Calendar Management</li>
+      <li>Customer Support</li>
+      <li>Data Entry & Research</li>
+      <li>Social Media Assistance</li>
+      <li>Appointment Scheduling</li>
     </ul>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="section">
     <h2>Contact</h2>
-    <form action="https://formspree.io/f/mdkdwqne" method="POST">
-      <label for="name">Name:</label><br>
-      <input type="text" name="name" required><br><br>
-
-      <label for="email">Email:</label><br>
-      <input type="email" name="email" required><br><br>
-
-      <label for="message">Message:</label><br>
-      <textarea name="message" rows="5" required></textarea><br><br>
-
-      <button type="submit">Send</button>
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
-    <p>Or reach me directly: office@atyourserviceglobal.net</p>
   </section>
 
   <footer>
-    <p>© 2025 https://github.com/atyourserviceglobal/atyourserviceglobal/blob/main/logo.png.PNG?raw=true
-At Your Service Global. All rights reserved.</p>
+    <p>&copy; 2025 At Your Service Global. All rights reserved.</p>
   </footer>
 </body>
 </html>
-
