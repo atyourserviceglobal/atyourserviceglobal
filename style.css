@@ -59,3 +59,10 @@
     padding: 25px 15px;
   }
 }
+
+.logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  height: auto;
+  max-width: 200px;
+}
