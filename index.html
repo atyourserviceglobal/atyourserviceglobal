@@ -24,11 +24,6 @@
     a:hover {
       color: #fff;
     }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
     h1, h2, h3 {
       color: #eee;
       margin-bottom: 20px;
@@ -67,24 +62,50 @@
 
     /* Sections */
     section {
-      padding: 60px 0;
-      border-bottom: 1px solid #222;
+      padding: 60px 20px;
+      position: relative;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    /* Logo Styling */
+    /* Section backgrounds with overlay */
+    .section-bg {
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+    .section-bg::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.65); /* dark overlay */
+      z-index: -1;
+    }
+
+    /* Specific backgrounds */
+    #about.section-bg {
+      background-image: url('https://images.unsplash.com/photo-1586985289078-fdb39c3be8aa?auto=format&fit=crop&w=1950&q=80'); /* office setup */
+    }
+    #services.section-bg {
+      background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1950&q=80'); /* charts */
+    }
+    #pricing.section-bg {
+      background-image: url('https://images.unsplash.com/photo-1587613865763-4b8b59f73458?auto=format&fit=crop&w=1950&q=80'); /* typing hands */
+    }
+
+    /* Logo */
     .logo {
       display: block;
       margin: 0 auto 20px auto;
       max-width: 200px;
       height: auto;
-    }
-
-    /* About Section */
-    #about p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #ccc;
     }
 
     /* Services List */
@@ -98,33 +119,80 @@
       color: #bbb;
     }
     .services-list li {
-      background: #222;
+      background: rgba(0,0,0,0.3);
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
       text-align: center;
       font-weight: 500;
       font-size: 1.1rem;
       transition: background 0.3s;
     }
     .services-list li:hover {
-      background: #333;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .pricing-card {
+      background: rgba(0,0,0,0.4);
+      border-radius: 8px;
+      padding: 30px;
+      flex: 1 1 300px;
+      color: #ddd;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+      transition: transform 0.3s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+    }
+    .pricing-card h3 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .pricing-card .price {
+      font-size: 2rem;
+      margin: 15px 0;
+      color: #fff;
+    }
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .pricing-card ul li {
+      margin-bottom: 10px;
+    }
+    .pricing-card button {
+      background: #444;
+      color: #ddd;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .pricing-card button:hover {
+      background: #666;
       color: #fff;
     }
 
     /* Testimonials */
-    #testimonials .testimonials {
+    .testimonials {
+      max-width: 700px;
+      margin: 0 auto;
       background: #1e1e1e;
       padding: 30px;
       border-radius: 10px;
-      max-width: 700px;
-      margin: 0 auto;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.7);
       font-style: italic;
-      font-size: 1.1rem;
-      color: #ccc;
     }
-    #testimonials .author {
+    .author {
       margin-top: 15px;
       text-align: right;
       font-weight: 600;
@@ -147,11 +215,6 @@
       background: #222;
       color: #eee;
       font-size: 1rem;
-      resize: vertical;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: 2px solid #555;
     }
     .contact-form button {
       background: #333;
@@ -161,7 +224,6 @@
       border-radius: 6px;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s;
     }
     .contact-form button:hover {
       background: #555;
@@ -171,135 +233,24 @@
     /* Footer */
     footer {
       text-align: center;
-      padding: 25px 20px;
+      padding: 25px;
       background: #1e1e1e;
       color: #666;
-      font-size: 0.9rem;
-    }
-
-    /* Pricing Section */
-    #pricing {
-      background-color: #1a1a1a;
-      color: #ddd;
-    }
-    #pricing h2 {
-      color: #fff;
-      margin-bottom: 40px;
-      text-align: center;
-      font-size: 2.5rem;
-    }
-    .pricing-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .pricing-card {
-      background: #2a2a2a;
-      border-radius: 8px;
-      padding: 30px;
-      flex: 1 1 30%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s;
-    }
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.8);
-    }
-    .pricing-card h3 {
-      color: #fff;
-      margin-bottom: 15px;
-      font-size: 1.8rem;
-    }
-    .pricing-card p.description {
-      color: #bbb;
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-      flex-grow: 1;
-    }
-    .pricing-card p.price {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .pricing-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 25px 0;
-      color: #bbb;
-      font-size: 1.1rem;
-    }
-    .pricing-card ul li {
-      margin-bottom: 12px;
-    }
-    .pricing-card button {
-      background: #444;
-      color: #ddd;
-      border: none;
-      padding: 14px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .pricing-card button:hover {
-      background: #666;
-      color: #fff;
     }
 
     /* Responsive */
-    @media (max-width: 900px) {
-      .pricing-grid {
-        flex-direction: column;
-        padding: 0 10px;
-      }
-      .pricing-card {
-        flex: 1 1 100%;
-        margin-bottom: 25px;
-      }
+    @media (max-width: 768px) {
       nav {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
       }
       .nav-links {
         flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        padding: 0;
+        align-items: center;
       }
-      .nav-links li {
-        width: 100%;
-        text-align: center;
-      }
-      .nav-links li a {
-        display: block;
-        width: 100%;
-        padding: 10px 0;
-        font-size: 1.1rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-      #about p,
-      .services-list li,
-      .pricing-card p.description,
-      #testimonials .testimonials,
-      .contact-form input,
-      .contact-form textarea,
-      .contact-form button {
-        font-size: 1rem;
-      }
-      section {
-        padding: 40px 15px;
+      .pricing-grid {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
@@ -317,9 +268,9 @@
     </ul>
   </nav>
 
-  <!-- About Section with LOGO -->
-  <section id="about">
-    <div class="container" style="text-align: center;">
+  <!-- About -->
+  <section id="about" class="section section-bg">
+    <div class="container">
       <img src="https://github.com/atyourserviceglobal/atyourserviceglobal/blob/main/logo.png.PNG?raw=true" alt="AYSG Logo" class="logo" />
       <h1>Welcome to At Your Service Global</h1>
       <p>We are your professional virtual assistant partner, helping you stay organized, efficient, and stress-free — wherever you are in the world.</p>
@@ -327,7 +278,7 @@
   </section>
 
   <!-- Services -->
-  <section id="services">
+  <section id="services" class="section section-bg">
     <div class="container">
       <h2>Services</h2>
       <ul class="services-list">
@@ -340,14 +291,13 @@
     </div>
   </section>
 
-  <!-- Pricing Section -->
-  <section id="pricing">
+  <!-- Pricing -->
+  <section id="pricing" class="section section-bg">
     <div class="container">
       <h2>Our Pricing Plans</h2>
       <div class="pricing-grid">
         <div class="pricing-card">
           <h3>Basic</h3>
-          <p class="description">Ideal for individuals needing occasional assistance.</p>
           <p class="price">$199/month</p>
           <ul>
             <li>10 hours/month</li>
@@ -358,25 +308,21 @@
         </div>
         <div class="pricing-card">
           <h3>Standard</h3>
-          <p class="description">For small businesses requiring regular support.</p>
           <p class="price">$399/month</p>
           <ul>
             <li>25 hours/month</li>
-            <li>Priority email support</li>
+            <li>Priority support</li>
             <li>Advanced admin tasks</li>
-            <li>Social media management</li>
+            <li>Social media</li>
           </ul>
           <button>Choose Plan</button>
         </div>
         <div class="pricing-card">
           <h3>Premium</h3>
-          <p class="description">Comprehensive support for growing enterprises.</p>
           <p class="price">$599/month</p>
           <ul>
             <li>50 hours/month</li>
             <li>24/7 support</li>
-            <li>All admin tasks</li>
-            <li>Advanced analytics</li>
             <li>Custom projects</li>
           </ul>
           <button>Choose Plan</button>
@@ -386,7 +332,7 @@
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials">
+  <section id="testimonials" class="section">
     <div class="container">
       <h2>What Our Clients Say</h2>
       <div class="testimonials">
@@ -397,7 +343,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="section">
     <div class="container">
       <h2>Contact Us</h2>
       <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
@@ -409,6 +355,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 At Your Service Global. All rights reserved.
   </footer>
