@@ -1,3 +1,241 @@
+/* === Base Styles === */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #121212;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+a {
+  color: #bbb;
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+}
+
+h1, h2, h3 {
+  color: #eee;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* === Navigation === */
+nav {
+  display: flex;
+  justify-content: center;
+  background: #1e1e1e;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* === Logo === */
+.logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  height: auto;
+  max-width: 200px;
+}
+
+/* === Sections === */
+section {
+  padding: 60px 20px;
+  position: relative;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* === Backgrounds with Overlay === */
+.section-bg {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.section-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.65);
+  z-index: -1;
+}
+
+/* Specific Background Images */
+#about.section-bg {
+  background-image: url('https://images.unsplash.com/photo-1586985289078-fdb39c3be8aa?auto=format&fit=crop&w=1950&q=80'); /* office */
+}
+#services.section-bg {
+  background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1950&q=80'); /* charts */
+}
+#pricing.section-bg {
+  background-image: url('https://images.unsplash.com/photo-1587613865763-4b8b59f73458?auto=format&fit=crop&w=1950&q=80'); /* typing */
+}
+
+/* === Services === */
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #bbb;
+}
+.services-list li {
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+.services-list li:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* === Pricing Cards === */
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pricing-card {
+  background: rgba(0,0,0,0.4);
+  border-radius: 8px;
+  padding: 30px;
+  flex: 1 1 300px;
+  color: #ddd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  transition: transform 0.3s;
+}
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+}
+.pricing-card h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+.pricing-card .price {
+  font-size: 2rem;
+  margin: 15px 0;
+  color: #fff;
+}
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.pricing-card ul li {
+  margin-bottom: 10px;
+}
+.pricing-card button {
+  background: #444;
+  color: #ddd;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pricing-card button:hover {
+  background: #666;
+  color: #fff;
+}
+
+/* === Testimonials === */
+.testimonials {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 10px;
+  font-style: italic;
+}
+.author {
+  margin-top: 15px;
+  text-align: right;
+  font-weight: 600;
+  color: #aaa;
+}
+
+/* === Contact Form === */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: #eee;
+  font-size: 1rem;
+}
+.contact-form button {
+  background: #333;
+  color: #ddd;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background: #555;
+  color: #fff;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #1e1e1e;
+  color: #666;
+}
+
+/* === MOBILE STYLES === */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -58,11 +296,4 @@
     font-size: 1rem;
     padding: 25px 15px;
   }
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 20px auto;
-  height: auto;
-  max-width: 200px;
 }
