@@ -12,15 +12,17 @@
     body {
       margin: 0; 
       font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      background: #121212;
+      color: #ddd;
       line-height: 1.6;
     }
     a {
-      color: #0066ff;
+      color: #bbb;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
     a:hover {
+      color: #fff;
       text-decoration: underline;
     }
     img {
@@ -35,8 +37,8 @@
     }
     /* Header / Nav */
     header {
-      background: #fff;
-      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+      background: #1e1e1e;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.8);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -46,31 +48,36 @@
       align-items: center;
       justify-content: space-between;
       height: 60px;
+      flex-wrap: wrap;
     }
     .logo {
       font-weight: 700;
       font-size: 1.5rem;
-      color: #0066ff;
+      color: #ddd;
+      padding: 0.5rem 0;
     }
     .nav-links {
       list-style: none;
       display: flex;
       gap: 20px;
+      padding: 0;
+      margin: 0;
     }
     .nav-links li a {
       font-weight: 600;
       padding: 8px 12px;
       border-radius: 4px;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease;
+      color: #bbb;
     }
     .nav-links li a:hover {
-      background: #0066ff;
-      color: white;
+      background: #333;
+      color: #fff;
     }
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(0, 102, 255, 0.7), rgba(0, 102, 255, 0.7)), url('https://images.unsplash.com/photo-1587614382346-ac34f87f636f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      color: white;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1587614382346-ac34f87f636f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #eee;
       padding: 100px 20px;
       text-align: center;
     }
@@ -78,15 +85,17 @@
       font-size: 3rem;
       margin-bottom: 20px;
       line-height: 1.1;
+      text-shadow: 0 0 5px #000;
     }
     .hero p {
       font-size: 1.25rem;
       max-width: 700px;
       margin: 0 auto 30px;
+      text-shadow: 0 0 5px #000;
     }
     .btn-primary {
-      background: white;
-      color: #0066ff;
+      background: #333;
+      color: #eee;
       padding: 15px 40px;
       font-weight: 700;
       border: none;
@@ -94,25 +103,29 @@
       cursor: pointer;
       font-size: 1.1rem;
       transition: background 0.3s ease, color 0.3s ease;
+      box-shadow: 0 0 8px #000 inset;
     }
     .btn-primary:hover {
-      background: #004bb5;
-      color: white;
+      background: #555;
+      color: #fff;
+      box-shadow: 0 0 12px #222 inset;
     }
     /* Sections */
     section {
       padding: 60px 20px;
-      background: white;
+      background: #1e1e1e;
       margin-bottom: 20px;
       border-radius: 8px;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.05);
+      box-shadow: 0 3px 8px rgb(0 0 0 / 0.9);
+      color: #ccc;
     }
     section h2 {
       text-align: center;
       margin-bottom: 40px;
-      color: #0066ff;
+      color: #eee;
       font-weight: 700;
       font-size: 2rem;
+      text-shadow: 0 0 5px #000;
     }
     /* About */
     #about p {
@@ -120,6 +133,7 @@
       margin: 0 auto;
       font-size: 1.1rem;
       text-align: center;
+      color: #bbb;
     }
     /* Services */
     .services-list {
@@ -132,179 +146,6 @@
       padding: 0;
     }
     .services-list li {
-      background: #e6f0ff;
+      background: #333;
       padding: 20px;
       border-radius: 8px;
-      font-weight: 600;
-      text-align: center;
-      box-shadow: 0 1px 5px rgb(0 0 0 / 0.1);
-      transition: background 0.3s ease;
-      cursor: default;
-    }
-    .services-list li:hover {
-      background: #cce0ff;
-    }
-    /* Testimonials */
-    .testimonials {
-      max-width: 700px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
-      background: #f0f7ff;
-      padding: 30px 20px;
-      font-style: italic;
-      color: #004bb5;
-    }
-    .testimonials p {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-      line-height: 1.4;
-    }
-    .testimonials .author {
-      text-align: right;
-      font-weight: 700;
-      font-style: normal;
-      font-size: 1rem;
-      color: #003080;
-    }
-    /* Contact */
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      padding: 12px 15px;
-      font-size: 1rem;
-      border: 2px solid #0066ff;
-      border-radius: 6px;
-      resize: vertical;
-      transition: border-color 0.3s ease;
-      font-family: inherit;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: #004bb5;
-      outline: none;
-    }
-    .contact-form textarea {
-      min-height: 120px;
-    }
-    .contact-form button {
-      padding: 15px;
-      background: #0066ff;
-      color: white;
-      font-weight: 700;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: background 0.3s ease;
-    }
-    .contact-form button:hover {
-      background: #004bb5;
-    }
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f0f7ff;
-      color: #004bb5;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-top: 40px;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .btn-primary {
-        padding: 12px 30px;
-        font-size: 1rem;
-      }
-      .services-list {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">At Your Service Global</div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h1>Your Professional Virtual Assistant Partner</h1>
-      <p>Helping you stay organized, efficient, and stress-free — wherever you are in the world.</p>
-      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Get In Touch</button>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>At Your Service Global is dedicated to providing professional virtual assistant services tailored to your needs. We help businesses and entrepreneurs save time and boost productivity by handling routine tasks efficiently and reliably.</p>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <ul class="services-list">
-        <li>Email &amp; Calendar Management</li>
-        <li>Customer Support</li>
-        <li>Data Entry &amp; Research</li>
-        <li>Social Media Assistance</li>
-        <li>Appointment Scheduling</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="testimonials">
-    <div class="container">
-      <h2>What Clients Say</h2>
-      <div class="testimonials">
-        <p>"Their support helped me focus on growing my business. Highly recommend!"</p>
-        <div class="author">- Sarah M.</div>
-      </div>
-      <div class="testimonials" style="margin-top:20px;">
-        <p>"Reliable, professional, and always ahead of deadlines."</p>
-        <div class="author">- James K.</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 At Your Service Global. All rights reserved.
-  </footer>
-</body>
-</html>
