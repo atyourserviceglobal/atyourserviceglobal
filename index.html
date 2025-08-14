@@ -149,3 +149,214 @@
       background: #333;
       padding: 20px;
       border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 1px 5px rgb(0 0 0 / 0.9);
+      transition: background 0.3s ease;
+      cursor: default;
+      color: #ddd;
+      text-shadow: 0 0 2px #000;
+    }
+    .services-list li:hover {
+      background: #444;
+    }
+    /* Testimonials */
+    .testimonials {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgb(0 0 0 / 0.9);
+      background: #2a2a2a;
+      padding: 30px 20px;
+      font-style: italic;
+      color: #bbb;
+      text-shadow: 0 0 3px #000;
+    }
+    .testimonials p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+    .testimonials .author {
+      text-align: right;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 1rem;
+      color: #999;
+      text-shadow: none;
+    }
+    /* Contact */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: 2px solid #444;
+      border-radius: 6px;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+      background: #222;
+      color: #ddd;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #666;
+      outline: none;
+      background: #333;
+      color: #eee;
+    }
+    .contact-form textarea {
+      min-height: 120px;
+    }
+    .contact-form button {
+      padding: 15px;
+      background: #444;
+      color: #ddd;
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s ease, color 0.3s ease;
+      box-shadow: 0 0 8px #000 inset;
+    }
+    .contact-form button:hover {
+      background: #666;
+      color: #fff;
+      box-shadow: 0 0 12px #222 inset;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      color: #666;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 40px;
+      box-shadow: inset 0 1px 3px #000;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .btn-primary {
+        padding: 14px 35px;
+        font-size: 1rem;
+      }
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nav-links li {
+        margin-bottom: 5px;
+      }
+      .hero {
+        padding: 60px 20px;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .btn-primary {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+      }
+      .services-list {
+        grid-template-columns: 1fr;
+      }
+      section {
+        padding: 40px 15px;
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">At Your Service Global</div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Your Professional Virtual Assistant Partner</h1>
+      <p>Helping you stay organized, efficient, and stress-free — wherever you are in the world.</p>
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Get In Touch</button>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>At Your Service Global is committed to providing top-notch virtual assistant services tailored to your needs. We ensure your business runs smoothly with reliability and professionalism.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <ul class="services-list">
+        <li>Email & Calendar Management</li>
+        <li>Customer Support</li>
+        <li>Data Entry & Research</li>
+        <li>Social Media Assistance</li>
+        <li>Appointment Scheduling</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonials">
+        <p>"Reliable, professional, and always ahead of deadlines."</p>
+        <div class="author">- James K.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 At Your Service Global. All rights reserved.
+  </footer>
+</body>
+</html>
