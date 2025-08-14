@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>At Your Service Global - Virtual Assistant</title>
+  <title>At Your Service Global</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* Reset & basics */
-    *, *::before, *::after {
+    /* Reset & base */
+    * {
       box-sizing: border-box;
     }
     body {
-      margin: 0; 
+      margin: 0;
       font-family: 'Inter', sans-serif;
       background: #121212;
       color: #ddd;
@@ -19,175 +20,109 @@
     a {
       color: #bbb;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
     a:hover {
       color: #fff;
-      text-decoration: underline;
     }
-    img {
-      max-width: 100%;
-      display: block;
-    }
-    /* Container */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 20px;
     }
-    /* Header / Nav */
-    header {
-      background: #1e1e1e;
-      box-shadow: 0 2px 4px rgb(0 0 0 / 0.8);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    h1, h2, h3 {
+      color: #eee;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
+    /* Navbar */
     nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 60px;
-      flex-wrap: wrap;
+      background: #1e1e1e;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.8);
     }
     .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #ddd;
-      padding: 0.5rem 0;
+      max-width: 160px;
+      height: auto;
     }
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 20px;
-      padding: 0;
+      gap: 25px;
       margin: 0;
+      padding: 0;
     }
     .nav-links li a {
       font-weight: 600;
-      padding: 8px 12px;
+      font-size: 1rem;
+      padding: 6px 8px;
       border-radius: 4px;
-      transition: background 0.3s ease, color 0.3s ease;
-      color: #bbb;
+      transition: background 0.3s;
     }
     .nav-links li a:hover {
       background: #333;
       color: #fff;
     }
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1587614382346-ac34f87f636f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      color: #eee;
-      padding: 100px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      line-height: 1.1;
-      text-shadow: 0 0 5px #000;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      text-shadow: 0 0 5px #000;
-    }
-    .btn-primary {
-      background: #333;
-      color: #eee;
-      padding: 15px 40px;
-      font-weight: 700;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: background 0.3s ease, color 0.3s ease;
-      box-shadow: 0 0 8px #000 inset;
-    }
-    .btn-primary:hover {
-      background: #555;
-      color: #fff;
-      box-shadow: 0 0 12px #222 inset;
-    }
     /* Sections */
     section {
-      padding: 60px 20px;
-      background: #1e1e1e;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.9);
-      color: #ccc;
+      padding: 60px 0;
+      border-bottom: 1px solid #222;
     }
-    section h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #eee;
-      font-weight: 700;
-      font-size: 2rem;
-      text-shadow: 0 0 5px #000;
-    }
-    /* About */
+    /* Hero / About */
     #about p {
       max-width: 700px;
       margin: 0 auto;
       font-size: 1.1rem;
-      text-align: center;
-      color: #bbb;
+      color: #ccc;
     }
-    /* Services */
+    /* Services List */
     .services-list {
-      max-width: 700px;
-      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
       gap: 20px;
       list-style: none;
       padding: 0;
+      margin: 0;
+      color: #bbb;
     }
     .services-list li {
-      background: #333;
+      background: #222;
       padding: 20px;
       border-radius: 8px;
-      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
       text-align: center;
-      box-shadow: 0 1px 5px rgb(0 0 0 / 0.9);
-      transition: background 0.3s ease;
-      cursor: default;
-      color: #ddd;
-      text-shadow: 0 0 2px #000;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: background 0.3s;
     }
     .services-list li:hover {
-      background: #444;
+      background: #333;
+      color: #fff;
     }
     /* Testimonials */
-    .testimonials {
+    #testimonials .testimonials {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 10px;
       max-width: 700px;
       margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.9);
-      background: #2a2a2a;
-      padding: 30px 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.7);
       font-style: italic;
-      color: #bbb;
-      text-shadow: 0 0 3px #000;
-    }
-    .testimonials p {
-      margin-bottom: 20px;
       font-size: 1.1rem;
-      line-height: 1.4;
+      color: #ccc;
     }
-    .testimonials .author {
+    #testimonials .author {
+      margin-top: 15px;
       text-align: right;
-      font-weight: 700;
-      font-style: normal;
-      font-size: 1rem;
-      color: #999;
-      text-shadow: none;
+      font-weight: 600;
+      color: #aaa;
     }
-    /* Contact */
+    /* Contact Form */
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
@@ -197,126 +132,182 @@
     }
     .contact-form input,
     .contact-form textarea {
-      padding: 12px 15px;
-      font-size: 1rem;
-      border: 2px solid #444;
+      padding: 12px;
+      border: none;
       border-radius: 6px;
-      resize: vertical;
-      transition: border-color 0.3s ease;
-      font-family: inherit;
       background: #222;
-      color: #ddd;
+      color: #eee;
+      font-size: 1rem;
+      resize: vertical;
     }
     .contact-form input:focus,
     .contact-form textarea:focus {
-      border-color: #666;
-      outline: none;
-      background: #333;
-      color: #eee;
-    }
-    .contact-form textarea {
-      min-height: 120px;
+      outline: 2px solid #555;
     }
     .contact-form button {
-      padding: 15px;
-      background: #444;
+      background: #333;
       color: #ddd;
-      font-weight: 700;
       border: none;
-      border-radius: 30px;
+      padding: 14px;
+      border-radius: 6px;
+      font-weight: 600;
       cursor: pointer;
-      font-size: 1.1rem;
-      transition: background 0.3s ease, color 0.3s ease;
-      box-shadow: 0 0 8px #000 inset;
+      transition: background 0.3s;
     }
     .contact-form button:hover {
-      background: #666;
+      background: #555;
       color: #fff;
-      box-shadow: 0 0 12px #222 inset;
     }
     /* Footer */
     footer {
       text-align: center;
-      padding: 20px;
-      background: #1a1a1a;
+      padding: 25px 20px;
+      background: #1e1e1e;
       color: #666;
-      font-weight: 600;
       font-size: 0.9rem;
-      margin-top: 40px;
-      box-shadow: inset 0 1px 3px #000;
+    }
+    /* Pricing Section */
+    #pricing {
+      background-color: #1a1a1a;
+      color: #ddd;
+    }
+    #pricing h2 {
+      color: #fff;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+    .pricing-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .pricing-card {
+      background: #2a2a2a;
+      border-radius: 8px;
+      padding: 30px;
+      flex: 1 1 30%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+    }
+    .pricing-card h3 {
+      color: #fff;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+    .pricing-card p.description {
+      color: #bbb;
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+    .pricing-card p.price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 25px 0;
+      color: #bbb;
+      font-size: 1.1rem;
+    }
+    .pricing-card ul li {
+      margin-bottom: 12px;
+    }
+    .pricing-card button {
+      background: #444;
+      color: #ddd;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .pricing-card button:hover {
+      background: #666;
+      color: #fff;
     }
     /* Responsive */
     @media (max-width: 900px) {
-      .hero h1 {
-        font-size: 2.5rem;
+      .pricing-grid {
+        flex-direction: column;
+        padding: 0 10px;
       }
-      .btn-primary {
-        padding: 14px 35px;
-        font-size: 1rem;
+      .pricing-card {
+        flex: 1 1 100%;
+        margin-bottom: 25px;
+      }
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 0;
+      }
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+      }
+      .nav-links li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 1.1rem;
       }
     }
     @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .nav-links li {
-        margin-bottom: 5px;
-      }
-      .hero {
-        padding: 60px 20px;
-      }
-      .hero h1 {
+      h1 {
         font-size: 1.8rem;
       }
-      .hero p {
+      #about p,
+      .services-list li,
+      .pricing-card p.description,
+      #testimonials .testimonials,
+      .contact-form input,
+      .contact-form textarea,
+      .contact-form button {
         font-size: 1rem;
-      }
-      .btn-primary {
-        padding: 12px 30px;
-        font-size: 0.95rem;
-      }
-      .services-list {
-        grid-template-columns: 1fr;
       }
       section {
         padding: 40px 15px;
-        margin-bottom: 15px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">At Your Service Global</div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Your Professional Virtual Assistant Partner</h1>
-      <p>Helping you stay organized, efficient, and stress-free — wherever you are in the world.</p>
-      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Get In Touch</button>
-    </div>
-  </section>
+  <nav>
+    <img src="https://github.com/atyourserviceglobal/atyourserviceglobal/blob/main/logo.png.PNG?raw=true" alt="AYSG Logo" class="logo" />
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <section id="about">
     <div class="container">
-      <h2>About Us</h2>
-      <p>At Your Service Global is committed to providing top-notch virtual assistant services tailored to your needs. We ensure your business runs smoothly with reliability and professionalism.</p>
+      <h1>Welcome to At Your Service Global</h1>
+      <p>We are your professional virtual assistant partner, helping you stay organized, efficient, and stress-free — wherever you are in the world.</p>
     </div>
   </section>
 
@@ -330,6 +321,55 @@
         <li>Social Media Assistance</li>
         <li>Appointment Scheduling</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <div class="container">
+      <h2>Our Pricing Plans</h2>
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <h3>Basic</h3>
+          <p class="description">Ideal for individuals needing occasional assistance.</p>
+          <p class="price">$199/month</p>
+          <ul>
+            <li>10 hours/month</li>
+            <li>Email support</li>
+            <li>Basic admin tasks</li>
+          </ul>
+          <button>Choose Plan</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Standard</h3>
+          <p class="description">For small businesses requiring regular support.</p>
+          <p class="price">$399/month</p>
+          <ul>
+            <li>25 hours/month</li>
+            <li>Priority email support</li>
+            <li>Advanced admin tasks</li>
+            <li>Social media management</li>
+          </ul>
+          <button>Choose Plan</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Premium</h3>
+          <p class="description">Comprehensive support for growing enterprises.</p>
+          <p class="price">$599/month</p>
+          <ul>
+            <li>50 hours/month</li>
+            <li>24/7 support</li>
+            <li>All admin tasks</li>
+            <li>Advanced analytics</li>
+            <li>Custom projects</li>
+          </ul>
+          <button>Choose Plan</button>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -358,5 +398,6 @@
   <footer>
     &copy; 2025 At Your Service Global. All rights reserved.
   </footer>
+
 </body>
 </html>
