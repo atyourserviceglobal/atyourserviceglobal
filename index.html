@@ -34,21 +34,17 @@
       margin-bottom: 20px;
       font-weight: 600;
     }
+
     /* Navbar */
     nav {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       background: #1e1e1e;
       padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 100;
       box-shadow: 0 2px 5px rgba(0,0,0,0.8);
-    }
-    .logo {
-      max-width: 160px;
-      height: auto;
     }
     .nav-links {
       list-style: none;
@@ -68,18 +64,29 @@
       background: #333;
       color: #fff;
     }
+
     /* Sections */
     section {
       padding: 60px 0;
       border-bottom: 1px solid #222;
     }
-    /* Hero / About */
+
+    /* Logo Styling */
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 200px;
+      height: auto;
+    }
+
+    /* About Section */
     #about p {
       max-width: 700px;
       margin: 0 auto;
       font-size: 1.1rem;
       color: #ccc;
     }
+
     /* Services List */
     .services-list {
       display: grid;
@@ -104,6 +111,7 @@
       background: #333;
       color: #fff;
     }
+
     /* Testimonials */
     #testimonials .testimonials {
       background: #1e1e1e;
@@ -122,6 +130,7 @@
       font-weight: 600;
       color: #aaa;
     }
+
     /* Contact Form */
     .contact-form {
       max-width: 600px;
@@ -158,6 +167,7 @@
       background: #555;
       color: #fff;
     }
+
     /* Footer */
     footer {
       text-align: center;
@@ -166,6 +176,7 @@
       color: #666;
       font-size: 0.9rem;
     }
+
     /* Pricing Section */
     #pricing {
       background-color: #1a1a1a;
@@ -241,6 +252,7 @@
       background: #666;
       color: #fff;
     }
+
     /* Responsive */
     @media (max-width: 900px) {
       .pricing-grid {
@@ -272,6 +284,7 @@
         font-size: 1.1rem;
       }
     }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 1.8rem;
@@ -293,8 +306,8 @@
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav>
-    <img src="https://github.com/atyourserviceglobal/atyourserviceglobal/blob/main/logo.png.PNG?raw=true" alt="AYSG Logo" class="logo" />
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -304,13 +317,16 @@
     </ul>
   </nav>
 
+  <!-- About Section with LOGO -->
   <section id="about">
-    <div class="container">
+    <div class="container" style="text-align: center;">
+      <img src="https://github.com/atyourserviceglobal/atyourserviceglobal/blob/main/logo.png.PNG?raw=true" alt="AYSG Logo" class="logo" />
       <h1>Welcome to At Your Service Global</h1>
       <p>We are your professional virtual assistant partner, helping you stay organized, efficient, and stress-free — wherever you are in the world.</p>
     </div>
   </section>
 
+  <!-- Services -->
   <section id="services">
     <div class="container">
       <h2>Services</h2>
@@ -329,7 +345,6 @@
     <div class="container">
       <h2>Our Pricing Plans</h2>
       <div class="pricing-grid">
-
         <div class="pricing-card">
           <h3>Basic</h3>
           <p class="description">Ideal for individuals needing occasional assistance.</p>
@@ -341,7 +356,6 @@
           </ul>
           <button>Choose Plan</button>
         </div>
-
         <div class="pricing-card">
           <h3>Standard</h3>
           <p class="description">For small businesses requiring regular support.</p>
@@ -354,7 +368,6 @@
           </ul>
           <button>Choose Plan</button>
         </div>
-
         <div class="pricing-card">
           <h3>Premium</h3>
           <p class="description">Comprehensive support for growing enterprises.</p>
@@ -368,11 +381,11 @@
           </ul>
           <button>Choose Plan</button>
         </div>
-
       </div>
     </div>
   </section>
 
+  <!-- Testimonials -->
   <section id="testimonials">
     <div class="container">
       <h2>What Our Clients Say</h2>
@@ -383,6 +396,7 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
     <div class="container">
       <h2>Contact Us</h2>
